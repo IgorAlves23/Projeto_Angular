@@ -1,0 +1,23 @@
+<form (ngSubmit)="updateContato()">
+  <div class="form-group mb-3">
+    <label for="inputName">Nome</label>
+    <input type="text" class="form-control" [(ngModel)]="contatos.nome" name="nome" id="inputName" placeholder="Nome Completo" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="inputTipoContato">Tipo do Contato</label>
+    <select class="form-control" [(ngModel)]="contatos.tipoContato" name="tipoContato" id="inputTipoContato" required>
+      <option *ngFor="let tipo of tiposContato" [value]="tipo">{{ tipo }}</option>
+    </select>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="inputContato">Contato</label>
+    <input type="text" class="form-control" [(ngModel)]="contatos.contato" name="contato" id="inputContato" placeholder="Digite o contato" required>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="button" [routerLink]="['/listaContatos']" class="btn btn-danger">Cancelar</button>
+  </div>
+</form>

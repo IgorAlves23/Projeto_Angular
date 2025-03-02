@@ -1,0 +1,68 @@
+<div class="container mt-4">
+  <div class="list-group">
+    <div class="list-group-item list-group-item-dark">
+      <div class="row text-center fw-bold">
+        <div class="col-1">Id</div>
+        <div class="col-1">Nome</div>
+        <div class="col-3">Tipo do Contato</div>
+        <div class="col-3">Contato</div>
+        <div class="col-2">Pessoa</div>
+        <div class="col-1">Editar</div>
+        <div class="col-1">Excluir</div>
+      </div>
+    </div>
+
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let contato of contatos; let i = index" style="border-bottom: 1px solid #ddd">
+        <div class="row align-items-center text-center">
+          <div class="col-1">{{ contato.id }}</div>
+          <div class="col-1">{{ contato.nome }}</div>
+          <div class="col-3">{{ contato.tipoContato }}</div>
+          <div class="col-3">{{ contato.contato }}</div>
+          <div class="col-2">{{ getPessoaNome(contato) }}</div>
+          <div class="col-1 d-flex justify-content-center">
+            <div class="noCenter">
+              <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/editar-contato', contato.id]" routerLinkActive="router-link-active">
+                Editar
+              </button>
+
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Contato</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="inputName" class="form-label">Nome</label>
+                          <input type="text" class="form-control" id="inputName" placeholder="Digite o Nome completo">
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputCep" class="form-label">Tipo Contato</label>
+                          <input type="cep" class="form-control" id="inputCep" placeholder="Email, Telefone, Celular ou Rede Social">
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputEndereco" class="form-label">Contato</label>
+                          <input type="text" class="form-control" id="inputEndereco" placeholder="Digite o numero, email ou rede social">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                      <button type="button" class="btn btn-success">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button (click)="delete(contato.id!)" type="button" class="btn btn-danger btn-sm">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

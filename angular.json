@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Projeto_Angular": {
+    "AppPessoas": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projeto-angular",
+            "outputPath": "dist/app-pessoas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -56,7 +56,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -65,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Projeto_Angular:build:production"
+              "browserTarget": "AppPessoas:build:production"
             },
             "development": {
-              "browserTarget": "Projeto_Angular:build:development"
+              "browserTarget": "AppPessoas:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Projeto_Angular:build"
+            "browserTarget": "AppPessoas:build"
           }
         },
         "test": {
@@ -100,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,27 +1,46 @@
-# ProjetoAngular
+# Avaliação de Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Projeto Angular que consiste em desenvolver um aplicativo web usando o framework Angular. e criar uma aplicação completa que permite listar, cadastrar, editar e
+excluir Pessoas.
 
-## Development server
+## Tecnologias utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular CLI Versão 16.2.16
+- Node Versão 18.20.2
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A Aplicação permite as seguintes operações:
 
-## Build
+### Listagem de Pessoas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Listar Pessoa e exebir na tabela os campos: ID, Nome, Endereço, CEP, Cidade e UF
+- Exibir os contatos da Pessoa
+- Exluir Uma pessoa
+- Editar uma Pessoa
 
-## Running unit tests
+### Cadastro de Pessoas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Cadastrar Pessoas com os seguintes campos:
 
-## Running end-to-end tests
+- Nome
+- CEP
+- Endereço
+- Cidade
+- UF
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Edição de Pessoas
 
-## Further help
+#### Editar os seguintes campos de uma Pessoa:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Nome
+- CEP
+- Endereço
+- Cidade
+- UF
+- Buscar CEP de uma Pessoa pelo [ViaCep](https://viacep.com.br/)
+
+## Clone do Repositorio
+```bash
+    git clone https://github.com/IgorAlves23/Projeto_Angular.git.
+```
